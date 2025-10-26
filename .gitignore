@@ -33,6 +33,9 @@ secring.*
 # API Keys and Tokens
 .npmrc
 .pypirc
+*_TOKEN
+*_API_KEY
+*_SECRET
 
 # Password Files
 *.password
