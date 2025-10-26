@@ -1,0 +1,13 @@
+#terraform aliases
+alias tf="terraform"
+alias tfl="terraform list"
+alias tfa="terraform init && terraform apply --auto-approve"
+alias tfr="terraform refresh"
+alias tfd="terraform destroy --auto-approve"
+alias tfs="terraform show"
+alias tfp="terraform plan"
+alias tfc="terraform output"
+alias tfi="terraform init"
+alias tfsj="terraform show -json"
+alias tfsjg="terraform show -json | jq"
+alias tfclean="rm -rf .terraform terraform.tfstate* .terraform.lock.hcl *.zip"

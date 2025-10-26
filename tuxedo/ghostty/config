@@ -1,0 +1,108 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/lalit/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+theme = Dark+
+
+# Font settings
+font-family = Fira Code
+font-size = 14
+
+# ============================================
+# Keybindings - Intuitive & Conflict-Free
+# ============================================
+
+# Special sequences
+keybind = shift+enter=text:\x1b\r
+
+# Split Management
+# ----------------
+# Create splits - Ctrl+Shift + directional keys
+keybind = ctrl+shift+right=new_split:right
+keybind = ctrl+shift+left=new_split:left
+keybind = ctrl+shift+up=new_split:up
+keybind = ctrl+shift+down=new_split:down
+
+# Navigate between splits - Alt + arrows
+keybind = alt+right=goto_split:right
+keybind = alt+left=goto_split:left
+keybind = alt+up=goto_split:up
+keybind = alt+down=goto_split:down
+
+# Resize splits - Alt+Shift + arrows
+keybind = alt+shift+right=resize_split:right,20
+keybind = alt+shift+left=resize_split:left,20
+keybind = alt+shift+up=resize_split:up,10
+keybind = alt+shift+down=resize_split:down,10
+
+# Split utilities
+keybind = ctrl+shift+z=toggle_split_zoom
+keybind = ctrl+shift+e=equalize_splits
+
+# Tab Management
+# --------------
+# Create/close tabs
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_tab
+
+# Navigate tabs
+keybind = ctrl+tab=next_tab
+keybind = ctrl+shift+tab=previous_tab
+keybind = ctrl+shift+home=goto_tab:1
+keybind = ctrl+shift+end=last_tab
+
+# Jump to specific tabs (Alt + number)
+keybind = alt+1=goto_tab:1
+keybind = alt+2=goto_tab:2
+keybind = alt+3=goto_tab:3
+keybind = alt+4=goto_tab:4
+keybind = alt+5=goto_tab:5
+keybind = alt+6=goto_tab:6
+keybind = alt+7=goto_tab:7
+keybind = alt+8=goto_tab:8
+keybind = alt+9=goto_tab:9

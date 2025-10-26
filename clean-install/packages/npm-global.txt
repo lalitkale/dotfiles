@@ -1,0 +1,6 @@
+
+corepack
+n
+npm
+task-master-ai
+

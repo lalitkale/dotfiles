@@ -1,0 +1,64 @@
+# Sensitive Files - DO NOT COMMIT
+*.key
+*.pem
+*.cert
+*.p12
+*_rsa
+*_dsa
+*_ecdsa
+*_ed25519
+.env
+.env.*
+secrets/
+credentials/
+*.credentials
+auth_token*
+
+# SSH Keys
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+known_hosts
+
+# GPG Keys
+*.gpg
+*.asc
+secring.*
+
+# AWS Credentials
+.aws/credentials
+.aws/config
+
+# API Keys and Tokens
+.npmrc
+.pypirc
+
+# Password Files
+*.password
+*password.txt
+*.pass
+
+# Backup Files
+*.backup
+*.bak.bak
+*~
+.*.swp
+.*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+*.log.*
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Git Credential Store
+.git-credentials

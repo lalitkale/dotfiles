@@ -1,0 +1,116 @@
+[/]
+builtin-theme=false
+dark-theme=true
+migration-level=1
+panels=['b7488564-f6eb-11eb-990a-691109b5bf9b']
+
+[applets/{0430f978-0318-11ec-9ccb-4b8f82655e69}]
+alignment='center'
+name='Workspace Switcher'
+position=1
+
+[applets/{b7488565-f6eb-11eb-990a-691109b5bf9b}]
+alignment='start'
+name='AppMenu'
+position=0
+
+[applets/{b7488566-f6eb-11eb-990a-691109b5bf9b}]
+alignment='start'
+name='Separator'
+position=1
+
+[applets/{b7488567-f6eb-11eb-990a-691109b5bf9b}]
+alignment='start'
+name='Icon Task List'
+position=2
+
+[applets/{b7488568-f6eb-11eb-990a-691109b5bf9b}]
+alignment='start'
+name='ShowTime'
+position=3
+
+[applets/{b7488569-f6eb-11eb-990a-691109b5bf9b}]
+alignment='center'
+name='Clock'
+position=0
+
+[applets/{b748856a-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='AppIndicator Applet'
+position=0
+
+[applets/{b748856b-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Lock Keys Indicator'
+position=1
+
+[applets/{b748856c-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='System Tray'
+position=2
+
+[applets/{b748856d-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='DropBy'
+position=3
+
+[applets/{b748856e-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='QuickNote'
+position=3
+
+[applets/{b748856f-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Spacer'
+position=4
+
+[applets/{b7488570-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Night Light'
+position=5
+
+[applets/{b7488571-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Places'
+position=6
+
+[applets/{b7488572-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Notifications'
+position=7
+
+[applets/{b7488573-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Status Indicator'
+position=8
+
+[applets/{b7488574-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Separator'
+position=9
+
+[applets/{b7488575-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Spacer'
+position=10
+
+[applets/{b7488576-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='User Indicator'
+position=11
+
+[applets/{b7488577-f6eb-11eb-990a-691109b5bf9b}]
+alignment='end'
+name='Raven Trigger'
+position=12
+
+[instance/icon-tasklist/{b7488567-f6eb-11eb-990a-691109b5bf9b}]
+pinned-launchers=['nemo.desktop', 'org.gnome.Software.desktop', 'firefox.desktop', 'brave-browser.desktop', 'obsidian.desktop', 'thunderbird.desktop']
+
+[panels/{b7488564-f6eb-11eb-990a-691109b5bf9b}]
+applets=['b7488565-f6eb-11eb-990a-691109b5bf9b', 'b7488573-f6eb-11eb-990a-691109b5bf9b', 'b7488569-f6eb-11eb-990a-691109b5bf9b', 'b748856c-f6eb-11eb-990a-691109b5bf9b', 'b7488568-f6eb-11eb-990a-691109b5bf9b', 'b7488572-f6eb-11eb-990a-691109b5bf9b', 'b7488577-f6eb-11eb-990a-691109b5bf9b', 'b7488571-f6eb-11eb-990a-691109b5bf9b', 'b748856b-f6eb-11eb-990a-691109b5bf9b', 'b7488576-f6eb-11eb-990a-691109b5bf9b', 'b7488567-f6eb-11eb-990a-691109b5bf9b', 'b7488570-f6eb-11eb-990a-691109b5bf9b', 'b7488566-f6eb-11eb-990a-691109b5bf9b', 'b748856a-f6eb-11eb-990a-691109b5bf9b', '0430f978-0318-11ec-9ccb-4b8f82655e69', 'b748856f-f6eb-11eb-990a-691109b5bf9b', 'b7488575-f6eb-11eb-990a-691109b5bf9b', 'b7488574-f6eb-11eb-990a-691109b5bf9b', 'b748856e-f6eb-11eb-990a-691109b5bf9b']
+enable-shadow=true
+location='bottom'
+size=39
+spacing=2
+transparency='dynamic'

@@ -1,0 +1,1 @@
+flatpak not installed or no flatpaks
