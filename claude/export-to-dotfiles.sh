@@ -33,9 +33,9 @@ copy_files() {
 }
 
 make_portable() {
-  # Replace /home/lalit/ with literal $HOME/ so paths expand at runtime on any machine.
+  # Replace $HOME/ with literal $HOME/ so paths expand at runtime on any machine.
   # Using \$HOME (escaped) so sed writes the string "$HOME/" not the expanded value.
-  find "$DEST" -type f -exec sed -i "s|/home/lalit/|\$HOME/|g" {} +
+  find "$DEST" -type f -exec sed -i "s|$HOME/|\$HOME/|g" {} +
 }
 
 commit() {

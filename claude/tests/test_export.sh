@@ -15,7 +15,7 @@ mkdir -p "$FAKE_CLAUDE/scripts"
 echo "# CLAUDE"  > "$FAKE_CLAUDE/CLAUDE.md"
 echo "# RTK"     > "$FAKE_CLAUDE/RTK.md"
 cat > "$FAKE_CLAUDE/settings.json" << 'JSON'
-{"hooks":{"PreToolUse":[{"hooks":[{"command":"bash /home/lalit/.claude/scripts/bash-guard.sh"}]}]}}
+{"hooks":{"PreToolUse":[{"hooks":[{"command":"bash $HOME/.claude/scripts/bash-guard.sh"}]}]}}
 JSON
 echo '{"outputStyle":"caveman"}' > "$FAKE_CLAUDE/settings.local.json"
 echo '{"mcpServers":{}}'         > "$FAKE_CLAUDE/mcp.json"
@@ -51,8 +51,8 @@ test_creates_all_config_files() {
 }
 
 test_no_hardcoded_paths() {
-  if grep -r '/home/lalit/' "$FAKE_DOTFILES/claude/" 2>/dev/null | grep -q .; then
-    fail "no_hardcoded_paths" "found /home/lalit/ in exported files"
+  if grep -r '$HOME/' "$FAKE_DOTFILES/claude/" 2>/dev/null | grep -q .; then
+    fail "no_hardcoded_paths" "found $HOME/ in exported files"
   else
     pass "no_hardcoded_paths"
   fi

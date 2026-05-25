@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.anthropic.com)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(tsx:*)",
+      "Bash(test:*)",
+      "Bash(ps:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(chmod:*)",
+      "Bash(tree:*)",
+      "mcp__plugin_github_github__get_file_contents",
+      "mcp__plugin_github_github__list_branches"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "outputStyle": "caveman"
+}
