@@ -88,9 +88,9 @@ test_alias_idempotent() {
   ZSHRC="$fake_zshrc" bash -c "source '$SCRIPT'; setup_aliases"
   ZSHRC="$fake_zshrc" bash -c "source '$SCRIPT'; setup_aliases"
   local count
-  count=$(grep -c "alias claude=" "$fake_zshrc" 2>/dev/null || true)
+  count=$(grep -c 'local/bin' "$fake_zshrc" 2>/dev/null || true)
   [[ "$count" -eq 1 ]] && pass "alias_idempotent" \
-    || fail "alias_idempotent" "alias appeared $count times (expected 1)"
+    || fail "alias_idempotent" "PATH export appeared $count times (expected 1)"
 }
 
 # ── Run ───────────────────────────────────────────────────────────────────────

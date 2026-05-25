@@ -14,7 +14,7 @@ FAKE_DOTFILES="$TEST_DIR/dotfiles"
 mkdir -p "$FAKE_CLAUDE/scripts"
 echo "# CLAUDE"  > "$FAKE_CLAUDE/CLAUDE.md"
 echo "# RTK"     > "$FAKE_CLAUDE/RTK.md"
-cat > "$FAKE_CLAUDE/settings.json" << 'JSON'
+cat > "$FAKE_CLAUDE/settings.json" << JSON
 {"hooks":{"PreToolUse":[{"hooks":[{"command":"bash $HOME/.claude/scripts/bash-guard.sh"}]}]}}
 JSON
 echo '{"outputStyle":"caveman"}' > "$FAKE_CLAUDE/settings.local.json"

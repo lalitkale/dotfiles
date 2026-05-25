@@ -39,6 +39,18 @@ check_claude() {
   }
 }
 
+check_dependencies() {
+  local missing=0
+  for cmd in jq tmux; do
+    command -v "$cmd" >/dev/null || {
+      echo "WARNING: '$cmd' not found — some Claude hooks will not work."
+      echo "         Install via Homebrew: brew install $cmd"
+      missing=1
+    }
+  done
+  [[ $missing -eq 0 ]] && echo "Dependencies: jq and tmux found."
+}
+
 install_rtk() {
   echo "Installing RTK..."
   mkdir -p "$HOME/.local/bin"
@@ -87,20 +99,21 @@ install_plugins() {
     if [[ "$DRY_RUN" == "1" ]]; then
       echo "[DRY_RUN] claude plugin install $plugin"
     else
-      claude plugin install "$plugin"
+      claude plugin install "$plugin" || echo "  Warning: $plugin may already be installed"
     fi
   done
 }
 
 setup_aliases() {
-  if grep -q "alias claude=" "$ZSHRC" 2>/dev/null; then
+  if grep -q 'local/bin' "$ZSHRC" 2>/dev/null; then
     echo "Claude aliases already in $ZSHRC — skipping."
     return
   fi
   echo "Adding aliases to $ZSHRC..."
   cat >> "$ZSHRC" << 'ALIASES'
 
-# Claude Code aliases
+# Claude Code
+export PATH="$HOME/.local/bin:$PATH"
 alias claude='echo "$PWD" > ~/.claude_last_dir && command claude --dangerously-skip-permissions'
 alias cc='echo "$PWD" > ~/.claude_last_dir && command claude --continue --dangerously-skip-permissions'
 alias cdb='cd "$(cat ~/.claude_last_dir)"'
@@ -128,6 +141,7 @@ print_summary() {
 main() {
   check_macos
   check_claude
+  check_dependencies
   install_rtk
   pull_dotfiles
   copy_config
