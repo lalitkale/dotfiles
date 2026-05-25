@@ -51,7 +51,7 @@ test_creates_all_config_files() {
 }
 
 test_no_hardcoded_paths() {
-  if grep -r '$HOME/' "$FAKE_DOTFILES/claude/" 2>/dev/null | grep -q .; then
+  if grep -r "$HOME/" "$FAKE_DOTFILES/claude/" 2>/dev/null | grep -q .; then
     fail "no_hardcoded_paths" "found $HOME/ in exported files"
   else
     pass "no_hardcoded_paths"
