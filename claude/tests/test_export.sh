@@ -2,12 +2,13 @@
 set -euo pipefail
 
 PASS=0; FAIL=0
-pass() { echo "PASS: $1"; ((PASS++)); }
-fail() { echo "FAIL: $1 — $2"; ((FAIL++)); }
+pass() { echo "PASS: $1"; PASS=$((PASS + 1)); }
+fail() { echo "FAIL: $1 — $2"; FAIL=$((FAIL + 1)); }
 
-TMPDIR=$(mktemp -d)
-FAKE_CLAUDE="$TMPDIR/claude"
-FAKE_DOTFILES="$TMPDIR/dotfiles"
+TEST_DIR=$(mktemp -d)
+trap 'rm -rf "$TEST_DIR"' EXIT
+FAKE_CLAUDE="$TEST_DIR/claude"
+FAKE_DOTFILES="$TEST_DIR/dotfiles"
 
 # Fake ~/.claude source tree
 mkdir -p "$FAKE_CLAUDE/scripts"
@@ -42,10 +43,11 @@ test_creates_all_config_files() {
   local dest="$FAKE_DOTFILES/claude"
   local files=(CLAUDE.md RTK.md settings.json settings.local.json mcp.json
                scripts/bash-guard.sh scripts/agent-tmux-pane.sh statusline-command.sh)
+  local missing=0
   for f in "${files[@]}"; do
-    [[ -f "$dest/$f" ]] || { fail "creates_all_config_files" "missing: $f"; return; }
+    [[ -f "$dest/$f" ]] || { fail "creates_all_config_files" "missing: $f"; missing=1; }
   done
-  pass "creates_all_config_files"
+  [[ $missing -eq 0 ]] && pass "creates_all_config_files"
 }
 
 test_no_hardcoded_paths() {
@@ -77,7 +79,6 @@ test_no_hardcoded_paths
 test_excludes_credentials
 test_git_commit_made
 
-rm -rf "$TMPDIR"
 echo ""
 echo "Results: $PASS passed, $FAIL failed"
 [[ $FAIL -eq 0 ]]
