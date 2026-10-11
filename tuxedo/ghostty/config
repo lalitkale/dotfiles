@@ -47,11 +47,30 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
-theme = Dark+
+
+shell-integration-features = sudo,ssh-terminfo,ssh-env
+
+theme = Catppuccin Frappe
+
+# labwc advertises org_kde_kwin_server_decoration but never draws the bar for
+# Ghostty, so auto/server give no title bar. Force Ghostty's own (CSD) header.
+window-decoration = client
 
 # Font settings
 font-family = Fira Code
-font-size = 14
+font-size = 12
+
+
+# ============================================
+# Ghostty Paste Issue Fix - Required with Opencode and Ghostty
+# For Issue understanding:https://github.com/anomalyco/opencode/issues/15907
+# on terminal set -g allow-passthrough on
+# ============================================
+
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow
+
 
 # ============================================
 # Keybindings - Intuitive & Conflict-Free
@@ -67,12 +86,15 @@ keybind = ctrl+shift+right=new_split:right
 keybind = ctrl+shift+left=new_split:left
 keybind = ctrl+shift+up=new_split:up
 keybind = ctrl+shift+down=new_split:down
+# close the split
+keybind = ctrl+q=close_surface
 
 # Navigate between splits - Alt + arrows
 keybind = alt+right=goto_split:right
 keybind = alt+left=goto_split:left
 keybind = alt+up=goto_split:up
 keybind = alt+down=goto_split:down
+
 
 # Resize splits - Alt+Shift + arrows
 keybind = alt+shift+right=resize_split:right,20
